@@ -16,14 +16,32 @@ fn string(arg: String) {
 }
 
 fn main() {
-    ???("blue");
-    ???("red".to_string());
-    ???(String::from("hi"));
-    ???("rust is fun!".to_owned());
-    ???("nice weather".into());
-    ???(format!("Interpolation {}", "Station"));
-    ???(&String::from("abc")[0..1]);
-    ???("  hello there ".trim());
-    ???("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ???("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    let mut owned_string: String = "rust is fun!".to_owned();
+    let borrowed_string: &str = "bar";
+    // owned_string.push_str(borrowed_string);
+    // string(owned_string);
+
+    // let new_string = format!("{}{}", owned_string, borrowed_string);
+    // let new_string = format!("{}{}", new_string, borrowed_string);
+
+    for _ in 0..5 {
+        owned_string.push_str("bar");
+    }
+
+
+    let together = owned_string.clone() + borrowed_string;
+    println!("{}", together);
+    // string(owned_string);
+
+    // string(format!("{}{}", owned_string, borrowed_string))
+
+    // string_slice("blue");
+    // string("red".to_string());
+    // string(String::from("hi"));
+    // string_slice("nice weather".into());
+    // string(format!("Interpolation {}", "Station"));
+    // string_slice(&String::from("abc")[0..1]);
+    // string_slice("  hello there ".trim());
+    // string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    // string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
